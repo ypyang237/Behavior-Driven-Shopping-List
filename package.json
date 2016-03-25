@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/ypyang237/Behavior-Driven-Shopping-List/issues"
   },
-  "homepage": "https://github.com/ypyang237/Behavior-Driven-Shopping-List#readme"
+  "homepage": "https://github.com/ypyang237/Behavior-Driven-Shopping-List#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
 }
