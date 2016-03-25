@@ -59,9 +59,52 @@ describe('ShoppingListItem', function() {
     });
 
   });// end of Render method
-}); //end of ShoppingListItem
+}); //end of ShoppingListItem Class
 
 
-description('ShoppingList', function() {
+describe('ShoppingList', function() {
+  var sl;
+  beforeEach(function() {
+    sl = new ShoppingList('macbook', 'surfacebook');
+  });
 
-});
+  it('should be a function', function() {
+    expect(ShoppingList).to.be.a('function');
+  });
+
+  it('should have a property named items', function(){
+    expect(sl).to.have.property('items');
+  });
+
+  it('should have a constructor that initializes items as an empty Array', function() {
+    expect(sl.items).to.be.an('array');
+  });
+
+  describe('addItem Method', function() {
+
+   it('should have a method named addItem that adds the ShoppingList object to the items array', function() {
+    var mySli = new ShoppingListItem('choc', 'good');
+
+    expect(sl.addItem).to.exist;
+    (sl.addItem(mySli));
+    expect(sl.items).to.have.length.of(1);
+    expect(sl.items[0]).to.equal(mySli);
+    });
+
+   it ('should throw an error if anything else that is not an ShoppingListItem is passed in', function() {
+      console.log(sl);
+
+      expect(sl.addItem.bind(sl, 'string')).to.throw(Error);
+   });
+
+
+
+
+  });//end of add Item Method
+
+  // it('should have a method named removeItem that accepts a single ShoppingList argument', function() {
+  //   expect(sl.removeItem).to.exist;
+  //   expect(sl.removeItem()).to.be.an('array');
+  //   expect(sl.removeItem).to.have.property('items');
+  // });
+});//end of ShoppingList class

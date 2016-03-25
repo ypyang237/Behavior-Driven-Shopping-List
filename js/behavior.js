@@ -14,7 +14,21 @@ function ShoppingListItem(name, description) {
     return rendered;
 
   };
+}  //end of ShoppingListItem
+
+function ShoppingList() {
+  this.items = [];
+  this.addItem = function(newItem) {
+    if(newItem instanceof ShoppingListItem !== true) {
+      throw Error('this is not a ShoppingListItem');
+    }
+    this.items.push(newItem);
+
+  };
 }
+
+
+
 
 
 
