@@ -22,10 +22,7 @@ document.getElementById('content').innerHTML = myWants.render();
 
 });
 
-function changeCheckedStatus(idx) {
 
-
-}
 
   document.getElementById('content').addEventListener('click', function(event) {
 
@@ -38,12 +35,20 @@ function changeCheckedStatus(idx) {
          console.log(myWants.items[index]);
       }
       else {
-
         myWants.items[index].uncheck();
          console.log(myWants.items[index]);
       }
+    }  //end of checkbox
 
-      // console.log(myWants.items[index]);
+    if(event.target.nodeName === 'BUTTON') {
+      var removeIndex = event.target.dataset.index;
+      console.log(myWants.items[removeIndex]);
+      myWants.items.splice(removeIndex, 1);
+      console.log('what is left:', myWants.items);
+      document.getElementById('content').innerHTML = myWants.render();
+
     }
+
   });
-  changeCheckedStatus();
+
+

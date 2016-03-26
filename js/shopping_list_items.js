@@ -10,9 +10,10 @@ function ShoppingListItem(name, description) {
   };
   this.render = function(index) {
     var rendered = '<ul>' +'<li class="' + 'completed_' + this.is_done + '"' + '>' +
-    '<span>' + this.name + '</span>' + '<br>' + '<input type ="checkbox" data-index =' + index + '>' + '<span>' + this.description + '</span>' +'</li>' +'</ul>';
+    '<span>' + this.name + '</span>' + '<br>' + '<input type ="checkbox" data-index =' + index + '>' + '<span>' + this.description + '<button data-index='+index+'>X</button>' +'</span>' + '</li>' +'</ul>';
     return rendered;
 
 
   };
 }  //end of ShoppingListItem
+
