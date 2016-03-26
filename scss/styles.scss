@@ -1,7 +1,123 @@
-body {
-  background-color: red;
+//Importing Partials   //resets all the margins and padding so it stays consistent for every browser
+@import "partials/reset";
+@import url(https://fonts.googleapis.com/css?family=Bitter);
+// include General Styles
 
-  h1 {
-    color: purple;
+//VARIABLES
+
+$primary-color: purple;
+$secondary-color: white;
+$third-color: #56336B;
+
+//MIXINS
+
+$breakpoints: (
+  'medium': 600px,
+  'large':  1000px
+) !default;
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media only screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
   }
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+/*-----
+
+STYLES
+
+------*/
+
+a{
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+  text-align: left;
+}
+
+
+body {
+  background-color: $primary-color;
+
+
+  h1{
+  text-align: center;
+  color: $secondary-color;
+  font-family: 'Bitter', serif;
+  font-weight: 100;
+  //or 700;
+    transition: all 0.5s ease;
+
+    @include respond-to('medium') {
+      font-size: 40px;
+    }
+
+    @include respond-to('large') {
+      font-size: 72px;
+      //media-queries things should happen before any nesting things.
+    }
+
+      &:hover{
+        color: darken($secondary-color, 90%);
+        transition: all 0.5s ease;
+        font-size: 40px;
+      }
+  }
+
+} //end of body
+
+
+/* HEADER */
+
+header {
+  padding: 30 px;
+  border: 1px solid $secondary-color;
+
+  h2 {
+    font-family: 'Bitter', serif;
+    text-align: center;
+    padding: 30px;
+    background-color: lighten($primary-color, 50%);
+
+    @include respond-to('medium') {
+      font-size: 40px;
+    }
+
+    @include respond-to('large') {
+      font-size: 50px;
+      //media-queries things should happen before any nesting things.
+    }
+
+    &:hover{
+        color: darken($secondary-color, 20%);
+        transition: all 0.5s ease;
+        font-size: 40px;
+      }
+
+  }
+
+}  //end of header
+
+//form
+
+form {
+  font-family: 'Bitter', serif;
+  text-align: center;
+  padding: 30px;
+  background-color: lighten($third-color, 10%);
+}
+
+button {
+  margin-left: 40%;
+  font-family: 'Bitter', serif;
+  font-weight: 100;
+  text-align: center;
+  padding: 10px;
 }
