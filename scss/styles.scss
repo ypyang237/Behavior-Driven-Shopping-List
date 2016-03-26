@@ -115,9 +115,33 @@ form {
 }
 
 button {
-  margin-left: 40%;
+
   font-family: 'Bitter', serif;
   font-weight: 100;
   text-align: center;
   padding: 10px;
+}
+
+li {
+  font-family: 'Bitter', serif;
+  font-weight: 100;
+   padding: 10px;
+
+    span {
+      background-color: lightblue;
+      padding: 1px;
+
+    }
+
+    div {
+      background-color: red;
+      padding:2px;
+    }
+
+    button{
+      padding: 1px;
+      border-color: green;
+      font-weight: 70;
+      background-color: yellow;
+    }
 }
