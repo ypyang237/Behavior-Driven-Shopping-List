@@ -133,4 +133,24 @@ describe('ShoppingList', function() {
 
   }); //end of remove method;
 
+  describe('Render Method', function() {
+    it('should be a function', function() {
+      expect(sl.render).to.be.a('function');
+    });
+
+    it('should concatenate the result of calling render() on each item in the items array', function() {
+
+      var mySecondItem = new ShoppingListItem('hair gel', 'morrocon oil');
+      var myThirdItem = new ShoppingListItem('shampoo', 'herbal essence');
+      var myFourthItem = new ShoppingListItem('detangler', 'Loreal brand');
+      sl.addItem(mySecondItem);
+      sl.addItem(myThirdItem);
+      sl.addItem(myFourthItem);
+      expect(sl.render()).to.be.a('string');
+      expect(sl.render()).to.equal('<ul><li class="completed_false"><span>hair gel</span><span>morrocon oil</span></li><ul><ul><li class="completed_false"><span>shampoo</span><span>herbal essence</span></li><ul><ul><li class="completed_false"><span>detangler</span><span>Loreal brand</span></li><ul>');
+      //console.log(sl.render());
+    });
+  }); //end of render method
+
+
 });//end of ShoppingList class

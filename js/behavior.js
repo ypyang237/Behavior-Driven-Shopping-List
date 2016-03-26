@@ -40,11 +40,19 @@ function ShoppingList() {
       } else if(previousItem instanceof ShoppingListItem !== true) {
       throw Error('this is not a ShoppingListItem!');
          }
+  }; //end of remove method
 
+  this.render = function() {
 
+    var concatRendered = "";
 
-  };
+    for(var i= 0; i< this.items.length; i++) {
+      concatRendered += this.items[i].render();
+    }
+    return concatRendered;
+  }; //end of render method
 }
+
 
 
 
