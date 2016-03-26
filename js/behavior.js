@@ -23,6 +23,25 @@ function ShoppingList() {
       throw Error('this is not a ShoppingListItem');
     }
     this.items.push(newItem);
+  }; //end of addItem method
+
+  this.removeItem = function(previousItem) {
+    // var filterItems = this.items.filter(function(e) {
+    //   return e!== previousItem;
+    // });
+    // return filterItems;
+
+    if(this.items.indexOf(previousItem) !== -1) {
+      this.items.splice(this.items.indexOf(previousItem), 1);
+      return this.items;
+    } else if(!previousItem) {
+      this.items.pop();
+      return this.items;
+      } else if(previousItem instanceof ShoppingListItem !== true) {
+      throw Error('this is not a ShoppingListItem!');
+         }
+
+
 
   };
 }

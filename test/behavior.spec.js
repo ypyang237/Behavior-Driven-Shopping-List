@@ -82,7 +82,11 @@ describe('ShoppingList', function() {
 
   describe('addItem Method', function() {
 
-   it('should have a method named addItem that adds the ShoppingList object to the items array', function() {
+    it('should be a function', function() {
+      expect(sl.addItem).to.be.a('function');
+    });
+
+   it('addItem should add the ShoppingList object to the items array', function() {
     var mySli = new ShoppingListItem('choc', 'good');
 
     expect(sl.addItem).to.exist;
@@ -92,19 +96,41 @@ describe('ShoppingList', function() {
     });
 
    it ('should throw an error if anything else that is not an ShoppingListItem is passed in', function() {
-      console.log(sl);
-
       expect(sl.addItem.bind(sl, 'string')).to.throw(Error);
    });
-
-
-
-
   });//end of add Item Method
 
-  // it('should have a method named removeItem that accepts a single ShoppingList argument', function() {
-  //   expect(sl.removeItem).to.exist;
-  //   expect(sl.removeItem()).to.be.an('array');
-  //   expect(sl.removeItem).to.have.property('items');
-  // });
+  describe('removeItem Method', function() {
+
+   it('should be a function', function() {
+    expect(sl.removeItem).to.exist;
+    expect(sl.removeItem).to.be.a('function');
+   });
+
+   it('should remove the ShoppingListItem that was passed in previously out of the array', function() {
+    var mySecondItem = new ShoppingListItem('hair gel', 'morrocon oil');
+    var myThirdItem = new ShoppingListItem('shampoo', 'herbal essence');
+    var myFourthItem = new ShoppingListItem('detangler', 'Loreal brand');
+    sl.addItem(mySecondItem);
+    sl.addItem(myThirdItem);
+    sl.addItem(myFourthItem);
+    sl.removeItem(mySecondItem);
+    expect(sl.items).to.have.length.of(2);
+   });
+
+   it('invoking the removeItem method with no parameters should remove the last item in the items list, if there are any items, else it does nothing', function() {
+    var mySecondItem = new ShoppingListItem('hair gel', 'morrocon oil');
+    var myThirdItem = new ShoppingListItem('shampoo', 'herbal essence');
+    sl.addItem(mySecondItem);
+    sl.addItem(myThirdItem);
+    sl.removeItem();
+    expect(sl.items).to.have.length.of(1);
+   });
+
+   it('should throw an Error if something other than a ShoppingListItem object was passed in', function() {
+    expect(sl.removeItem.bind(sl, 'pearl milk tea')).to.throw(Error);
+   });
+
+  }); //end of remove method;
+
 });//end of ShoppingList class
