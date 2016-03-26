@@ -29,9 +29,10 @@ function ShoppingList() {
     var concatRendered = "";
 
     for(var i= 0; i< this.items.length; i++) {
-      concatRendered += this.items[i].render();
+      concatRendered += this.items[i].render(i);
     }
     return concatRendered;
+
   }; //end of render method
 }
 
