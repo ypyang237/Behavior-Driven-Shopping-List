@@ -4,38 +4,49 @@
   <meta charset="UTF-8">
   <title>Behavior-Driven-Shopping-List</title>
   <link rel="stylesheet" href="/css/styles.css">
+
   <!-- no need to put a link for the styles.scss, just the styles.css -->
+
+  <style>
+  input[type='text'] { font-size: 25px; font-family: Pacifico; }
+  </style>
 
 </head>
 <body>
 <br>
-  <h1>Behavior-Driven Shopping List</h1>
+<br>
+<div id="top">
+<div id="shoppingCart"><img src="../css/notaquitter.jpg"height="100px" width="100px"></div>
+  <h1>My Shopping List</h1>
+</div>
     <br>
     <br>
     <header>
       <h2>
-        Enjoy Shopping
+        “you can always find something you want.”
+        <br>
+        ― Sophie Kinsella, Confessions of a Shopaholic
       </h2>
    </header>
    <br>
-   <br>
-<form>
-  Title:
-  <br>
-  <br>
-  <input type='text' id='title'>
-  <br>
-  <br>
-  Description:
-  <br>
-  <br>
-  <input type ='text' id='description'>
-  <br>
-  <br>
-</form>
+
+ <div id="inputBlock">
+ <!--  <div id="shoppingCart"><img src="../css/let the shopping begin!.png"height="150px" width="300px"></div> -->
+  <form>
+    <div id="titleBlock">
+      Title :
+      <input type='text' id='title'>
+    </div>
+
+    <div id="descriptionBlock">
+      Description :
+      <input type ='text' id='description'>
+    </div>
+  </form>
+  </div>
+<div id ='addToShoppingListButton'>
 <button id="add_shopping_list_item_button">Click to add to Shopping List</button>
-
-
+</div>
 
 <div id = 'myLists'>
 <ul id='content'></ul>

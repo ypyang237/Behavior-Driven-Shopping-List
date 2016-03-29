@@ -8,10 +8,7 @@ function ShoppingList() {
   }; //end of addItem method
 
   this.removeItem = function(previousItem) {
-    // var filterItems = this.items.filter(function(e) {
-    //   return e!== previousItem;
-    // });
-    // return filterItems;
+
 
     if(this.items.indexOf(previousItem) !== -1) {
       this.items.splice(this.items.indexOf(previousItem), 1);

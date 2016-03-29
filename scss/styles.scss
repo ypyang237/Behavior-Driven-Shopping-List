@@ -1,13 +1,17 @@
 //Importing Partials   //resets all the margins and padding so it stays consistent for every browser
 @import "partials/reset";
-@import url(https://fonts.googleapis.com/css?family=Bitter);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
 // include General Styles
 
 //VARIABLES
 
-$primary-color: purple;
-$secondary-color: white;
-$third-color: #56336B;
+$primary-color: #EBD6E0;
+$rose: #E3A9C2;
+$lavender: #D6D4F9;
+$taro: #7F608A;
+$violet: RGBA(122,113,168, 0.8);
+$blackish: #1C1B29;
+
 
 //MIXINS
 
@@ -34,26 +38,20 @@ STYLES
 
 ------*/
 
-a{
-  text-decoration: none;
-}
-
-h1, h2, h3, h4, h5, h6{
-  text-align: left;
-}
-
-
 body {
-  background-color: $primary-color;
-
+  background-image: url("shopping.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
   h1{
+
   text-align: center;
-  color: $secondary-color;
-  font-family: 'Bitter', serif;
-  font-weight: 100;
-  //or 700;
-    transition: all 0.5s ease;
+  color: lighten($rose, 10%);
+  font-size: 40px;
+  font-family: 'Pacifico', cursive;
+  font-weight: 50;
+  transition: all 0.5s ease;
 
     @include respond-to('medium') {
       font-size: 40px;
@@ -65,7 +63,7 @@ body {
     }
 
       &:hover{
-        color: darken($secondary-color, 90%);
+        color: darken($rose, 40%);
         transition: all 0.5s ease;
         font-size: 40px;
       }
@@ -78,29 +76,35 @@ body {
 
 header {
   padding: 30 px;
-  border: 1px solid $secondary-color;
+  border: 2px $violet;
+  background-color: $violet;
+  max-width: 700px;
+  margin: auto;
+
+
 
   h2 {
-    font-family: 'Bitter', serif;
+    max-width: 400px;
+    margin: auto;
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
     text-align: center;
-    padding: 30px;
-    background-color: lighten($primary-color, 50%);
+    padding: 15px;
 
     @include respond-to('medium') {
-      font-size: 40px;
+      font-size: 20px;
     }
 
     @include respond-to('large') {
-      font-size: 50px;
-      //media-queries things should happen before any nesting things.
+      max-height: 100px;
+      font-size: 20px;
     }
 
     &:hover{
-        color: darken($secondary-color, 20%);
+        color: darken($taro, 30%);
         transition: all 0.5s ease;
-        font-size: 40px;
-      }
-
+        font-size: 23px;
+    }
   }
 
 }  //end of header
@@ -108,40 +112,157 @@ header {
 //form
 
 form {
-  font-family: 'Bitter', serif;
+  font-family: 'Pacifico', cursive;
   text-align: center;
-  padding: 30px;
-  background-color: lighten($third-color, 10%);
+  max-width: 500px;
+  margin: auto;
+  font-size: 20px;
+  padding: 25px;
+  // background-color: lighten($taro, 10%);
+  display: flex;
+  justify-content: center;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  flex-direction: column;
+  line-height: 20px;
+  display: flex;
+
+
+  @include respond-to('medium') {
+    line-height: 20px;
+    display: flex;
+  }
+
+  @include respond-to('large') {
+    display: flex;
+  }
+}
+  #titleBlock {
+
+    order: 1;
+    flex: 1 1 auto;
+    color: darken($rose, 80%);
+    background-color: $violet;
+
+  @include respond-to('medium') {
+    order: 1;
+    flex: 0 0 auto;
+    color: darken($rose, 80%);
+    background-color: $violet;
+  }
+
+  @include respond-to('large') {
+    order: 1;
+    flex: 1 1 auto;
+    color: darken($rose, 80%);
+    background-color: $violet;
+  }
+
+  }
+
+  #descriptionBlock {
+    order: 1;
+    flex: 1 1 auto;
+    color: darken($rose, 80%);
+    background-color: $violet;
+
+    @include respond-to('medium') {
+      order: 1;
+      flex: 0 0 auto;
+      color: darken($rose, 80%);
+      background-color: $violet;
+    }
+
+    @include respond-to('large') {
+      order: 1;
+      flex: 1 1 auto;
+      color: darken($rose, 80%);
+      background-color: $violet;
+    }
+
+  }
+
+#title {
+  max-width: 200px;
+
+    @include respond-to('medium') {
+    max-width: 400px;
+    }
+
+    @include respond-to('large') {
+    max-width: 400px;
+    }
+}
+#description {
+  max-width: 200px;
+
+    @include respond-to('medium') {
+    max-width: 400px;
+    }
+
+    @include respond-to('large') {
+    max-width: 400px;
+    }
 }
 
-button {
-
-  font-family: 'Bitter', serif;
-  font-weight: 100;
+#addToShoppingListButton {
   text-align: center;
-  padding: 10px;
+  max-width: 500px;
+  margin: auto;
+
+  #add_shopping_list_item_button {
+
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    max-width: 300px;
+    margin: auto;
+    background-color: $rose;
+    font-size: 15px;
+    padding: 5px;
+  }
+
+
+}
+
+ul {
+  text-align: center;
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
 }
 
 li {
-  font-family: 'Bitter', serif;
-  font-weight: 100;
-   padding: 10px;
-
-    span {
-      background-color: lightblue;
-      padding: 1px;
-
-    }
+  display: flex;
+  align-items: space-around;
+  // max-width: 40%;
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
 
     div {
-      background-color: red;
-      padding:2px;
+      order: 1;
+      flex: 0 1 10%;
     }
 
-    button{
-      padding: 1px;
-      border-color: green;
-      font-weight: 70;
-      background-color: yellow;
+    #titleSpan {
+      order: 2;
+      flex: 0 1 40%;
+    }
+
+    #descriptionSpan {
+      order: 3;
+      flex: 0 1 40%;
+    }
+
+    #delete{
+      order: 4;
+       flex: 0 1 20%;
+      max-height: 20px;
+      max-width: 20px;
     }
 }
+
+
+
+

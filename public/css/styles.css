@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url(https://fonts.googleapis.com/css?family=Bitter);
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -51,19 +51,17 @@ table {
 STYLES
 
 ------*/
-a {
-  text-decoration: none; }
-
-h1, h2, h3, h4, h5, h6 {
-  text-align: left; }
-
 body {
-  background-color: purple; }
+  background-image: url("shopping.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
   body h1 {
     text-align: center;
-    color: white;
-    font-family: 'Bitter', serif;
-    font-weight: 100;
+    color: #f0cfdd;
+    font-size: 40px;
+    font-family: 'Pacifico', cursive;
+    font-weight: 50;
     transition: all 0.5s ease; }
     @media only screen and (min-width: 600px) {
       body h1 {
@@ -72,54 +70,149 @@ body {
       body h1 {
         font-size: 72px; } }
     body h1:hover {
-      color: #1a1a1a;
+      color: #912f59;
       transition: all 0.5s ease;
       font-size: 40px; }
 
 /* HEADER */
 header {
   padding: 30 px;
-  border: 1px solid white; }
+  border: 2px RGBA(122, 113, 168, 0.8);
+  background-color: RGBA(122, 113, 168, 0.8);
+  max-width: 700px;
+  margin: auto; }
   header h2 {
-    font-family: 'Bitter', serif;
+    max-width: 400px;
+    margin: auto;
+    font-family: 'Pacifico', cursive;
+    font-size: 20px;
     text-align: center;
-    padding: 30px;
-    background-color: #ff80ff; }
+    padding: 15px; }
     @media only screen and (min-width: 600px) {
       header h2 {
-        font-size: 40px; } }
+        font-size: 20px; } }
     @media only screen and (min-width: 1000px) {
       header h2 {
-        font-size: 50px; } }
+        max-height: 100px;
+        font-size: 20px; } }
     header h2:hover {
-      color: #cccccc;
+      color: #2c2130;
       transition: all 0.5s ease;
-      font-size: 40px; }
+      font-size: 23px; }
 
 form {
-  font-family: 'Bitter', serif;
+  font-family: 'Pacifico', cursive;
   text-align: center;
-  padding: 30px;
-  background-color: #72438e; }
+  max-width: 500px;
+  margin: auto;
+  font-size: 20px;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  flex-flow: row nowrap;
+  align-items: flex-end;
+  flex-direction: column;
+  line-height: 20px;
+  display: flex; }
+  @media only screen and (min-width: 600px) {
+    form {
+      line-height: 20px;
+      display: flex; } }
+  @media only screen and (min-width: 1000px) {
+    form {
+      display: flex; } }
 
-button {
-  font-family: 'Bitter', serif;
-  font-weight: 100;
+#titleBlock {
+  order: 1;
+  flex: 1 1 auto;
+  color: black;
+  background-color: RGBA(122, 113, 168, 0.8); }
+  @media only screen and (min-width: 600px) {
+    #titleBlock {
+      order: 1;
+      flex: 0 0 auto;
+      color: black;
+      background-color: RGBA(122, 113, 168, 0.8); } }
+  @media only screen and (min-width: 1000px) {
+    #titleBlock {
+      order: 1;
+      flex: 1 1 auto;
+      color: black;
+      background-color: RGBA(122, 113, 168, 0.8); } }
+
+#descriptionBlock {
+  order: 1;
+  flex: 1 1 auto;
+  color: black;
+  background-color: RGBA(122, 113, 168, 0.8); }
+  @media only screen and (min-width: 600px) {
+    #descriptionBlock {
+      order: 1;
+      flex: 0 0 auto;
+      color: black;
+      background-color: RGBA(122, 113, 168, 0.8); } }
+  @media only screen and (min-width: 1000px) {
+    #descriptionBlock {
+      order: 1;
+      flex: 1 1 auto;
+      color: black;
+      background-color: RGBA(122, 113, 168, 0.8); } }
+
+#title {
+  max-width: 200px; }
+  @media only screen and (min-width: 600px) {
+    #title {
+      max-width: 400px; } }
+  @media only screen and (min-width: 1000px) {
+    #title {
+      max-width: 400px; } }
+
+#description {
+  max-width: 200px; }
+  @media only screen and (min-width: 600px) {
+    #description {
+      max-width: 400px; } }
+  @media only screen and (min-width: 1000px) {
+    #description {
+      max-width: 400px; } }
+
+#addToShoppingListButton {
   text-align: center;
-  padding: 10px; }
+  max-width: 500px;
+  margin: auto; }
+  #addToShoppingListButton #add_shopping_list_item_button {
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    max-width: 300px;
+    margin: auto;
+    background-color: #E3A9C2;
+    font-size: 15px;
+    padding: 5px; }
+
+ul {
+  text-align: center;
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center; }
 
 li {
-  font-family: 'Bitter', serif;
-  font-weight: 100;
-  padding: 10px; }
-  li span {
-    background-color: lightblue;
-    padding: 1px; }
+  display: flex;
+  align-items: space-around;
+  font-family: 'Pacifico', cursive;
+  font-size: 20px; }
   li div {
-    background-color: red;
-    padding: 2px; }
-  li button {
-    padding: 1px;
-    border-color: green;
-    font-weight: 70;
-    background-color: yellow; }
+    order: 1;
+    flex: 0 1 10%; }
+  li #titleSpan {
+    order: 2;
+    flex: 0 1 40%; }
+  li #descriptionSpan {
+    order: 3;
+    flex: 0 1 40%; }
+  li #delete {
+    order: 4;
+    flex: 0 1 20%;
+    max-height: 20px;
+    max-width: 20px; }

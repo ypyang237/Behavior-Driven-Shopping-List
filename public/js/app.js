@@ -15,10 +15,8 @@ function add_to_shopping_list() {
 }
 
 document.getElementById('add_shopping_list_item_button').addEventListener('click', function() {
-  add_to_shopping_list();
+add_to_shopping_list();
 document.getElementById('content').innerHTML = myWants.render();
-
-
 
 });
 
@@ -32,19 +30,16 @@ document.getElementById('content').innerHTML = myWants.render();
       if(myWants.items[index].is_done !== true){
 
         myWants.items[index].check();
-         console.log(myWants.items[index]);
       }
       else {
         myWants.items[index].uncheck();
-         console.log(myWants.items[index]);
+
       }
     }  //end of checkbox
 
     if(event.target.nodeName === 'BUTTON') {
       var removeIndex = event.target.dataset.index;
-      console.log(myWants.items[removeIndex]);
       myWants.items.splice(removeIndex, 1);
-      console.log('what is left:', myWants.items);
       document.getElementById('content').innerHTML = myWants.render();
 
     }
