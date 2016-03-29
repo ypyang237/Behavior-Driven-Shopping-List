@@ -52,9 +52,7 @@ STYLES
 
 ------*/
 body {
-  background-image: url("shopping.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
+  background: url("shopping.jpg") no-repeat center center fixed;
   background-size: cover; }
   body h1 {
     text-align: center;

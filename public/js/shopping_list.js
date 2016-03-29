@@ -1,7 +1,7 @@
 function ShoppingList() {
   this.items = [];
   this.addItem = function(newItem) {
-    if(newItem instanceof ShoppingListItem !== true) {
+    if(!newItem instanceof ShoppingListItem) {
       throw Error('this is not a ShoppingListItem');
     }
     this.items.push(newItem);

@@ -116,6 +116,7 @@ describe('ShoppingList', function() {
     sl.addItem(myFourthItem);
     sl.removeItem(mySecondItem);
     expect(sl.items).to.have.length.of(2);
+    expect(sl.items[1]).to.be.equal(myThirdItem);
    });
 
    it('invoking the removeItem method with no parameters should remove the last item in the items list, if there are any items, else it does nothing', function() {
@@ -125,6 +126,7 @@ describe('ShoppingList', function() {
     sl.addItem(myThirdItem);
     sl.removeItem();
     expect(sl.items).to.have.length.of(1);
+    expect(sl.item[1]).to.be.equal(mySecondItem);
    });
 
    it('should throw an Error if something other than a ShoppingListItem object was passed in', function() {

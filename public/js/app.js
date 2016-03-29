@@ -27,7 +27,7 @@ document.getElementById('content').innerHTML = myWants.render();
     if(event.target.type === 'checkbox') {
       var index = (event.target.dataset.index);
 
-      if(myWants.items[index].is_done !== true){
+      if(!myWants.items[index].is_done){
 
         myWants.items[index].check();
       }
